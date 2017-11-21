@@ -23,9 +23,7 @@ namespace ArrayListIntro
         private void button1_Click(object sender, EventArgs e)
         {
             al.Add(new Random().Next().ToString());
-            propertyGrid1.Refresh();
             UpdateTextBox1();
-
         }
 
         private void UpdateTextBox1()
@@ -35,6 +33,7 @@ namespace ArrayListIntro
             {
                 textBox1.AppendText(string.Format("{0:N3}", item) + Environment.NewLine);
             }
+            propertyGrid1.Refresh();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -64,7 +63,14 @@ namespace ArrayListIntro
         private void button6_Click(object sender, EventArgs e)
         {
             int i = Convert.ToInt32(textBox4.Text);
-            al.RemoveAt(i);
+            if (al.Count > 0)
+                al.RemoveAt(i);
+            UpdateTextBox1();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            al.TrimToSize();
             UpdateTextBox1();
         }
     }
