@@ -61,6 +61,7 @@
             this.btnEnQ.TabIndex = 2;
             this.btnEnQ.Text = "Enqueue";
             this.btnEnQ.UseVisualStyleBackColor = true;
+            this.btnEnQ.Click += new System.EventHandler(this.btnEnQ_Click);
             // 
             // btnDeQ
             // 
@@ -70,6 +71,7 @@
             this.btnDeQ.TabIndex = 3;
             this.btnDeQ.Text = "Dequeue";
             this.btnDeQ.UseVisualStyleBackColor = true;
+            this.btnDeQ.Click += new System.EventHandler(this.btnDeQ_Click);
             // 
             // txtEnQ
             // 
