@@ -22,16 +22,53 @@ namespace ArrayListIntro
 
         private void button1_Click(object sender, EventArgs e)
         {
-            al.Add(new Random().NextDouble());
+            al.Add(new Random().Next().ToString());
             propertyGrid1.Refresh();
+            UpdateTextBox1();
+
+        }
+
+        private void UpdateTextBox1()
+        {
             textBox1.Clear();
             foreach (var item in al)
             {
-                textBox1.AppendText( string.Format("{0:N3}", item)  + Environment.NewLine);
+                textBox1.AppendText(string.Format("{0:N3}", item) + Environment.NewLine);
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            bool found = al.Contains(textBox2.Text);
+            MessageBox.Show(found == true ? "Found " + textBox2.Text : "String not found");
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            al.Sort();
+            UpdateTextBox1();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            al.Reverse();
+            UpdateTextBox1();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            al.Remove(textBox3.Text);
+            UpdateTextBox1();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            int i = Convert.ToInt32(textBox4.Text);
+            al.RemoveAt(i);
+            UpdateTextBox1();
         }
     }
 }
 
-
+//https://msdn.microsoft.com/en-us/library/system.collections.arraylist(v=vs.110).aspx
 //https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-numeric-format-strings
