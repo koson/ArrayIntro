@@ -32,3 +32,6 @@ namespace ArrayListIntro
         }
     }
 }
+
+
+//https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-numeric-format-strings
