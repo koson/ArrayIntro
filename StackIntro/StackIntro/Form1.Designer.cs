@@ -66,6 +66,7 @@
             this.txtStack.Location = new System.Drawing.Point(297, 12);
             this.txtStack.Multiline = true;
             this.txtStack.Name = "txtStack";
+            this.txtStack.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtStack.Size = new System.Drawing.Size(262, 396);
             this.txtStack.TabIndex = 3;
             // 

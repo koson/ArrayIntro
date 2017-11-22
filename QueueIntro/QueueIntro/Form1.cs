@@ -18,12 +18,14 @@ namespace QueueIntro
             InitializeComponent();
             queue = new Queue();
             propertyGrid1.SelectedObject = queue;
+            txtEnQ.Text = string.Format("{0}", new Random().Next()).Substring(0,3); 
         }
 
         private void btnEnQ_Click(object sender, EventArgs e)
         {
             queue.Enqueue(txtEnQ.Text);
             UpdateView();
+            txtEnQ.Text = string.Format("{0}", new Random().Next()).Substring(0, 3);
         }
 
         private void UpdateView()
@@ -38,9 +40,16 @@ namespace QueueIntro
 
         private void btnDeQ_Click(object sender, EventArgs e)
         {
-            string deq = queue.Dequeue() as string;
-            txtDeQ.Text = deq;
-            UpdateView();
+            try
+            {
+                string deq = queue.Dequeue() as string;
+                txtDeQ.Text = deq;
+                UpdateView();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
